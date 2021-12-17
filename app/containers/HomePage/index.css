@@ -1,0 +1,77 @@
+.hero-container {
+  background-color: rgb(243, 242, 242);
+  padding-right: 40px;
+  display: flex;
+  gap: 30px;
+}
+.left-menu {
+  padding-left: 40px;
+  width: 250px;
+  background-color: #fafafa;
+  border-right: 1px solid #0000001a;
+  font-family: 'montserrat', sans-serif;
+}
+.home {
+  padding-top: 30px;
+  padding-bottom: 15px;
+  cursor: pointer;
+  font-weight: 700;
+  color: rgb(68, 201, 128);
+  border-bottom: 0.5px solid #0000001a;
+}
+.learning-menu,
+.manage-menu,
+.configure-menu {
+  margin-top: 15px;
+  border-bottom: 1px solid #0000001a;
+  color: grey;
+}
+.courses,
+.users,
+.report,
+.points,
+.email-templates {
+  margin-block: 25px;
+  cursor: pointer;
+}
+.learning-plans {
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.announcements,
+.billing {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.skills,
+.analytics,
+.reward,
+.company-info {
+  cursor: pointer;
+}
+.codemi-home-title {
+  padding-top: 30px;
+  font-family: 'montserrat', sans-serif;
+  font-weight: 500;
+  color: rgb(85, 83, 83);
+}
+.container-home-content {
+  display: flex;
+  gap: 15px;
+}
+.codemi-home-content {
+  width: 720px;
+  height: 400px;
+  background-color: #fff;
+  border: 1px solid #0000001a;
+  text-align: center;
+  text-align: center;
+}
+.codemi-home-content-2 {
+  width: 330px;
+  height: 400px;
+  color: #fff;
+  background-color: royalblue;
+}
