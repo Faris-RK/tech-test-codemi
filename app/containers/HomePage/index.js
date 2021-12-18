@@ -5,7 +5,7 @@
  *
  */
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import DiamondIcon from '@mui/icons-material/Diamond';
 import InsightsIcon from '@mui/icons-material/Insights';
 import UsbIcon from '@mui/icons-material/Usb';
@@ -19,8 +19,18 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import './index.css';
+import { dataCovid } from '../../redux/Services';
+import { Chart } from './Chart';
 
 export default function HomePage() {
+  const [covidData, setCovidData] = useState([]);
+  useEffect(() => {
+    dataCovid().then(response => {
+      setCovidData(response.data.confirmed);
+      console.log(response.data);
+    });
+  }, []);
+
   return (
     <div className="hero-container">
       <div className="left-menu">
@@ -87,7 +97,16 @@ export default function HomePage() {
         <div className="codemi-home-title">Codemi Home</div>
         <div className="container-home-content">
           <div className="codemi-home-content">CHART CONTENT</div>
-          <div className="codemi-home-content-2">CHART CONTENT 2</div>
+          <div className="codemi-home-content-2-container">
+            <div className="codemi-home-content-2">
+              <div className="content-2-title">Confirmed Covid Case</div>
+              <div className="value-confirmed-case">{covidData.value} </div>
+              <div className="chart">
+                <Chart className="chart" />
+              </div>
+              <div />
+            </div>
+          </div>
         </div>
       </div>
     </div>

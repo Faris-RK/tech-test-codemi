@@ -69,9 +69,27 @@
   text-align: center;
   text-align: center;
 }
-.codemi-home-content-2 {
+.codemi-home-content-2-container {
   width: 330px;
   height: 400px;
   color: #fff;
   background-color: royalblue;
+}
+
+.codemi-home-content-2 {
+  font-family: 'montserrat', sans-serif;
+  margin-left: 30px;
+  margin-top: 25px;
+}
+.content-2-title {
+  color: antiquewhite;
+}
+
+.value-confirmed-case {
+  margin-top: 10px;
+  font-size: 40px;
+  color: #fafafa;
+}
+.chart {
+  height: 300px;
 }
