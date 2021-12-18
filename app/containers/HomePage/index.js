@@ -19,11 +19,19 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import './index.css';
-import { dataCovid } from '../../redux/Services';
-import { Chart } from './Chart';
-
+import { dataConfirmed, dataCovid } from '../../redux/Services';
+import Chart from './Chart';
 export default function HomePage() {
   const [covidData, setCovidData] = useState([]);
+  const [confirmedData, setConfirmedData] = useState([' ']);
+  useEffect(() => {
+    dataConfirmed().then(response => {
+      setConfirmedData(response.data);
+      console.log(response.data[3]);
+    });
+  }, [' ']);
+  console.log(confirmedData['3']);
+
   useEffect(() => {
     dataCovid().then(response => {
       setCovidData(response.data.confirmed);
@@ -101,10 +109,31 @@ export default function HomePage() {
             <div className="codemi-home-content-2">
               <div className="content-2-title">Confirmed Covid Case</div>
               <div className="value-confirmed-case">{covidData.value} </div>
-              <div className="chart">
-                <Chart className="chart" />
+              <div className="chart-title">
+                Data Covid Per Month <hr />
               </div>
-              <div />
+              <div className="chart">
+                <Chart />
+              </div>
+              <div className="top-covid-case-container">
+                <div className="top-covid-case-title">
+                  Covid Case in The World
+                </div>
+                <div className="active-case">Active Case</div>
+              </div>
+              <hr className="line-2" />
+              <div className="container-top-rank">
+                <div className="top-1">{confirmedData[0].countryRegion}</div>
+                <div className="top-1-active-case">
+                  {confirmedData[0].confirmed}
+                </div>
+              </div>
+              {/* <div className="container-top-rank">
+                <div className="top-2">{confirmedData[3].countryRegion}</div>
+                <div className="top-2-active-case">
+                  {confirmedData[3].confirmed}
+                </div>
+              </div> */}
             </div>
           </div>
         </div>
